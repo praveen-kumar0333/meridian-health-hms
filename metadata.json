@@ -1,0 +1,6 @@
+{
+  "name": "Meridian Health HMS",
+  "description": "Hospital Management System with role-based portals for Administrators, Doctors, and Patients.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
