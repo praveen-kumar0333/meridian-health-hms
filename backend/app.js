@@ -82,6 +82,54 @@
 
 
 
+import express from 'express';
+import cors from 'cors';
+import { getDbStatus } from './config/db.js';
+import authRoutes from './routes/authRoutes.js';
+import dashboardRoutes from './routes/dashboardRoutes.js';
+import patientRoutes from './routes/patientRoutes.js';
+import doctorRoutes from './routes/doctorRoutes.js';
+import appointmentRoutes from './routes/appointmentRoutes.js';
+import medicalRecordRoutes from './routes/medicalRecordRoutes.js';
+import billingRoutes from './routes/billingRoutes.js';
+import notificationRoutes from './routes/notificationRoutes.js';
+import emergencyRoutes from './routes/emergencyRoutes.js';
+import bedRoutes from './routes/bedRoutes.js';
+import chatRoutes from './routes/chatRoutes.js';
+import { errorHandler, notFound } from './middleware/errorMiddleware.js';
+
+export const createApiRouter = () => {
+  const api = express.Router();
+
+  api.use(express.json({ limit: '2mb' }));
+  api.use(express.urlencoded({ extended: true }));
+
+  api.get('/health', (req, res) => {
+    const db = getDbStatus();
+    res.status(200).json({
+      success: true,
+      service: 'Meridian Health HMS API',
+      database: db,
+    });
+  });
+
+  api.use('/auth', authRoutes);
+  api.use('/dashboard', dashboardRoutes);
+  api.use('/patients', patientRoutes);
+  api.use('/doctors', doctorRoutes);
+  api.use('/appointments', appointmentRoutes);
+  api.use('/medical-records', medicalRecordRoutes);
+  api.use('/billing', billingRoutes);
+  api.use('/notifications', notificationRoutes);
+  api.use('/emergency', emergencyRoutes);
+  api.use('/beds', bedRoutes);
+  api.use('/chat', chatRoutes);
+
+  api.use(notFound);
+  api.use(errorHandler);
+
+  return api;
+};
 
 export const createBackendApp = () => {
   const app = express();
