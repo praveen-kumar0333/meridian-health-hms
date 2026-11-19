@@ -91,26 +91,26 @@ Version Control| Git, GitHub
 Meridian-Health-HMS/                           
 │                                               
 ├── backend/                                  
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── utils/
-│   ├── app.js
-│   ├── server.js
-│   └── package.json
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── layouts/
-│   │   ├── context/
-│   │   └── ...
-│   └── package.json
-│
-└── README.md
+│   ├── config/                                
+│   ├── controllers/                            
+│   ├── middleware/                                           
+│   ├── models/                                 
+│   ├── routes/                                
+│   ├── utils/                                                                 
+│   ├── app.js                                 
+│   ├── server.js                               
+│   └── package.json                            
+│                                               
+├── frontend/                                   
+│   ├── src/                                    
+│   │   ├── components/                       
+│   │   ├── pages/                             
+│   │   ├── layouts/                            
+│   │   ├── context/                            
+│   │   └── ...                                  
+│   └── package.json                          
+│                                              
+└── README.md                                      
 
 The structure above illustrates the main project organization; individual folders may contain additional files.
 
