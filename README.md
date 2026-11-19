@@ -88,10 +88,9 @@ Version Control| Git, GitHub
 
 🏗️ Project Architecture
 
-Meridian-Health-HMS/
-
-│
-├── backend/
+Meridian-Health-HMS/                           
+│                                               
+├── backend/                                  
 │   ├── config/
 │   ├── controllers/
 │   ├── middleware/
